@@ -218,6 +218,8 @@ export default {
 }
 .mywk__calendar {
   width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
