@@ -92,15 +92,18 @@ export default {
         };
         total_calendar_list.push(obj);
       }
-      if (total_calendar_list.length > 35) {
-        nextNum = 42 - total_calendar_list.length;
-      } else {
-        nextNum = 35 - total_calendar_list.length;
-      }
 
-      if (month === 1 && new Date(year, month, 0).getDay() === 6) {
-        nextNum = 0
-      }
+      // if (total_calendar_list.length > 35) {
+      //   nextNum = 42 - total_calendar_list.length;
+      // } else {
+      //   nextNum = 35 - total_calendar_list.length;
+      // }
+
+      // if (month === 1 && new Date(year, month, 0).getDay() === 6) {
+      //   nextNum = 0
+      // }
+
+      nextNum = 6 - new Date(year, month+1, 0).getDay()
       
       for (let i = 0; i < nextNum; i++) {
         let obj = {
