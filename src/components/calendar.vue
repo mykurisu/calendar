@@ -97,6 +97,11 @@ export default {
       } else {
         nextNum = 35 - total_calendar_list.length;
       }
+
+      if (month === 1 && new Date(year, month, 0).getDay() === 6) {
+        nextNum = 0
+      }
+      
       for (let i = 0; i < nextNum; i++) {
         let obj = {
           type: "next",
