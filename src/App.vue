@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <SingleMonthCalendar />
   </div>
 </template>
 
 <script>
+import SingleMonthCalendar from './components/SingleMonthCalendar.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    SingleMonthCalendar
+  }
 }
 </script>
 
