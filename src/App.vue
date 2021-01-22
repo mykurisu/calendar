@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <SingleMonthCalendar />
+    <div class="t">
+      <SingleMonthCalendar @selectDate="handleA" />
+    </div>
+    
   </div>
 </template>
 
@@ -11,6 +14,11 @@ export default {
   name: 'App',
   components: {
     SingleMonthCalendar
+  },
+  methods: {
+    handleA({date}) {
+      console.log(date);
+    }
   }
 }
 </script>
@@ -20,5 +28,9 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+}
+.t {
+  width: 600px;
+  margin: 30px;
 }
 </style>

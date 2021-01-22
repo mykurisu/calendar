@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.4",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "vue": "^2.6.11",
