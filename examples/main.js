@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import KurisuCalendar from '../dist/index'
+import KurisuCalendar from '../lib/'
 
 Vue.config.productionTip = false
 Vue.use(KurisuCalendar)

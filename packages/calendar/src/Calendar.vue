@@ -40,6 +40,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import dayjs from 'dayjs';
 import { getAllDaysForYear } from './calendar';
 
