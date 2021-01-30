@@ -1,6 +1,6 @@
 <template>
   <div class="calendar" v-if="calendarInit">
-    <slot name="header">
+    <slot name="header" v-if="needHeader">
       <div class="calendar__header">
         <div class="header__pre" @click="handlePreMonth"></div>
         <div class="header__title">
@@ -13,6 +13,7 @@
     <div class="calendar__main">
       <div
         class="main__block-head"
+        :style="{ height: blockHeight }"
         v-for="(item, index) in calendarHeader"
         :key="index"
       >
@@ -21,7 +22,7 @@
 
       <div
         :style="{ height: blockHeight }"
-        :class="`main__block ${
+        :class="`main__block main__block-${calendarID} ${
           item.type === 'pre' || item.type === 'next' ? 'main__block-not' : ''
         } ${
           item.content === selectedDate && item.type === 'normal'
@@ -29,7 +30,7 @@
             : ''
         }`"
         @click="handleDayClick(item)"
-        v-for="(item, index) in calendarData[selectedMonth]"
+        v-for="(item, index) in (outerCalendarData[selectedMonth] || calendarData[selectedMonth])"
         :key="item.type + item.content + `${index}`"
       >
         {{ item.content }}
@@ -40,13 +41,27 @@
 
 <script>
 import dayjs from 'dayjs';
+import { getAllDaysForYear } from './calendar';
+
 export default {
+  name: 'kurisu-calendar',
   props: {
     targetDate: String,
     targetTimestamp: Number,
+    needHeader: {
+      type: Boolean,
+      default: true,
+    },
+    outerCalendarData: {
+      type: Array,
+      default: function() {
+        return [];
+      },
+    },
   },
   data() {
     return {
+      calendarID: Date.now(),
       calendarInit: false,
       calendarShow: false,
       calendarHeader: ["日", "一", "二", "三", "四", "五", "六"],
@@ -68,8 +83,8 @@ export default {
   mounted() {
     this.init();
     this.$nextTick(function() {
-      this.blockHeight = document.querySelector(".main__block").offsetWidth + "px";
-    })
+      this.blockHeight = document.querySelector(`.main__block-${this.calendarID}`).offsetWidth + "px";
+    });
   },
   methods: {
     init() {
@@ -78,80 +93,9 @@ export default {
       this.selectedYear = Number(year);
       this.selectedMonth = Number(month) - 1;
       this.selectedDate = Number(date);
-      this.calendarData = this.getAllDaysForYear(Number(year));
+      this.calendarData = getAllDaysForYear(Number(year));
+      this.$emit('fetchCalendar', { calendar: this.calendarData });
       this.calendarInit = true;
-    },
-    getAllDaysForYear(year) {
-      /**
-       * monthData 每月数据 用于最后输出
-       * daysInMonth 每个月的天数
-       * specialDaysInMonth 每个月第一天和最后一天的星期
-       */
-      const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-      // 对闰年二月天数特殊处理
-      if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-        daysInMonth[1] = 29;
-      }
-      const monthData = new Array(12).fill(null);
-
-      const specialDaysInMonth = monthData.slice(0).map((m, i) => {
-        return [
-          new Date(year, i, 1).getDay(),
-          new Date(year, i, daysInMonth[i]).getDay(),
-        ];
-      });
-
-      return monthData.map((m, i) => {
-        const month = [];
-        const pre = this.preDaysCreator(
-          daysInMonth[i === 0 ? 11 : i - 1],
-          specialDaysInMonth[i][0]
-        );
-        const normal = this.normalDaysCreator(daysInMonth[i]);
-        const next = this.nextDaysCreator(specialDaysInMonth[i][1]);
-        return month.concat(pre, normal, next);
-      });
-    },
-
-    preDaysCreator(preLastDay, firstDay) {
-      const preDays = [];
-      for (; firstDay > 0; firstDay--) {
-        let obj = {
-          content: preLastDay--,
-          type: "pre",
-        };
-
-        preDays.push(obj);
-      }
-      return preDays;
-    },
-
-    nextDaysCreator(lastDay) {
-      const nextDays = [];
-      const count = 6 - lastDay;
-      for (let i = 0; i < count; i++) {
-        let obj = {
-          content: i + 1,
-          type: "next",
-        };
-
-        nextDays.push(obj);
-      }
-      return nextDays;
-    },
-
-    normalDaysCreator(days) {
-      const normalDays = [];
-      for (let i = 0; i < days; i++) {
-        let obj = {
-          content: i + 1,
-          type: "normal",
-        };
-
-        normalDays.push(obj);
-      }
-      return normalDays;
     },
 
     handleDayClick(item) {
@@ -201,7 +145,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   line-height: 22px;
-  margin-top: 17px;
+  margin: 17px 0;
 }
 
 .header__title {
@@ -254,7 +198,6 @@ export default {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-top: 19px;
 }
 
 .main__block {

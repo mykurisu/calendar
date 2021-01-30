@@ -1,25 +1,18 @@
 <template>
   <div id="app">
     <div class="t">
-      <SingleMonthCalendar @selectDate="handleA" />
+      <p>全局引用</p>
+      <Calendar
+        targetDate="2022/11/01"
+        :outer-calendar-data="cc"
+      />
     </div>
-    
   </div>
 </template>
 
 <script>
-import SingleMonthCalendar from './components/SingleMonthCalendar.vue'
-
 export default {
   name: 'App',
-  components: {
-    SingleMonthCalendar
-  },
-  methods: {
-    handleA({date}) {
-      console.log(date);
-    }
-  }
 }
 </script>
 
@@ -29,8 +22,17 @@ body {
   padding: 0;
   border: 0;
 }
+p {
+  text-align: center;
+}
 .t {
-  width: 600px;
+  display: inline-block;
+  width: 300px;
+  margin: 30px;
+}
+.tt {
+  display: inline-block;
+  width: 375px;
   margin: 30px;
 }
 </style>
