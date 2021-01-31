@@ -1,10 +1,8 @@
 <template>
   <div id="app">
     <div class="t">
-      <p>全局引用</p>
-      <Calendar
+      <kurisu-calendar
         targetDate="2022/11/01"
-        :outer-calendar-data="cc"
       />
     </div>
   </div>

@@ -1,6 +1,7 @@
 {
   "name": "kurisu-calendar",
   "version": "1.0.0",
+  "author": "mykurisu",
   "description": "基于 Vue 的日历组件",
   "main": "lib/kurisuCalendar.umd.min.js",
   "scripts": {

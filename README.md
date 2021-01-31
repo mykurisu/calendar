@@ -1,24 +1,31 @@
-# calendar
+## kurisu-calendar
 
-## Project setup
-```
-npm install
+> 基于 Vue 的日历组件
+
+### 食用方式
+
+① 直接集成
+
+```js
+// 安装依赖
+// npm install kurisu-calendar
+
+// main.js
+import KurisuCalendar from 'kurisu-calendar';
+import 'kurisu-calendar/kurisuCalendar.css';
+Vue.use(KurisuCalendar);
+// App.vue
+<div style="width: 375px">
+    <kurisu-calendar />
+</div>
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+② Fork改造
 
-### Compiles and minifies for production
-```
-npm run build
-```
+这里提供的组件，样式或者功能可能都没法完美贴合大家的需求，这种时候就可以fork仓库按照想要的方式尽情改造~
 
-### Lints and fixes files
-```
-npm run lint
-```
+核心代码：
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- packages/calendar/src/calendar.js -- 负责日历日期相关的处理
+- packages/calendar/src/calendar.scss -- 日历样式
+- packages/calendar/src/Calendar.vue -- 日历组件

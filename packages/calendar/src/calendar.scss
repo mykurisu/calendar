@@ -1,0 +1,124 @@
+.calendar {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.calendar__header {
+    color: #2c3135;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 22px;
+    margin: 17px 0;
+}
+
+.header__title {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.header__pre {
+    height: 12px;
+    width: 12px;
+    position: relative;
+
+    &:after {
+        content: " ";
+        display: inline-block;
+        height: 9px;
+        width: 9px;
+        border-width: 2px 2px 0 0;
+        border-color: #c8c8cd;
+        border-style: solid;
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+        left: 10px;
+    }
+}
+
+.header__next {
+    height: 12px;
+    width: 12px;
+    position: relative;
+
+    &:after {
+        content: " ";
+        display: inline-block;
+        height: 9px;
+        width: 9px;
+        border-width: 2px 2px 0 0;
+        border-color: #c8c8cd;
+        border-style: solid;
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+        left: -10px;
+    }
+}
+
+.calendar__main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.main__block {
+    width: calc(100% / 7);
+    margin-bottom: 15px;
+    border-radius: 2px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666666;
+    background-color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0;
+    position: relative;
+}
+
+.main__block-piont {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #f93d3a;
+    position: absolute;
+    left: calc(50% - 2.5px);
+    bottom: 0;
+}
+
+.main__block-not {
+    background-color: #edf2f5;
+    color: #7f8fa4;
+}
+
+.main__block-today {
+    transition: 0.5s all;
+    background-color: #f93d3a;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(171, 171, 171, 0.5);
+}
+
+.main__block-head {
+    width: calc(100% / 7);
+    margin-bottom: 15px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #7f8fa4;
+    background-color: #fff;
+    flex-shrink: 0;
+}
