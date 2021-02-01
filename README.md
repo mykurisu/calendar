@@ -4,7 +4,7 @@
 
 ### 旧版本
 
-如果大家是因为[这篇文章](https://juejin.cn/post/6844903565777960974)过来的，可以切换到 **master-old** 分支进行查看。
+如果大家是因为[这篇文章](https://juejin.cn/post/6844903565777960974)过来的，可以切换到[这个分支](https://github.com/mykurisu/calendar-vue/tree/master-old)进行查看。
 
 以下是新版本的说明，简略介绍一下两个版本的区别，两者功能样式没有任何变化。
 
