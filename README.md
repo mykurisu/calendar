@@ -12,6 +12,8 @@
 - 新版支持宽度自适应
 - 新版生成了依赖包以供大家开箱即用
 
+<img src="https://blog-1252307419.cos.ap-beijing.myqcloud.com/WX20210226-233650%402x.png" width="80%" />
+
 ### 食用方式
 
 ① 直接集成
