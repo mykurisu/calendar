@@ -109,6 +109,7 @@ export default {
     handlePreMonth() {
       if (this.isFirstMonth) {
         this.selectedYear = this.selectedYear - 1;
+        this.calendarData = getAllDaysForYear(Number(this.selectedYear));
       }
       this.selectedDate = 1;
       this.selectedMonth = this.isFirstMonth ? 11 : this.selectedMonth - 1;
@@ -118,6 +119,7 @@ export default {
     handleNextMonth() {
       if (this.isLastMonth) {
         this.selectedYear = this.selectedYear + 1;
+        this.calendarData = getAllDaysForYear(Number(this.selectedYear));
       }
       this.selectedDate = 1;
       this.selectedMonth = this.isLastMonth ? 0 : this.selectedMonth + 1;
