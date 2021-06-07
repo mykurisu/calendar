@@ -1,5 +1,3 @@
-import './core.scss';
-
 function getAllDaysForYear(year) {
     /**
      * monthData 每月数据 用于最后输出

@@ -1,0 +1,50 @@
+<template name="header">
+  <view class="__calendar__header">
+    <view class="__header__pre" bindtap="handlePreMonth"></view>
+    <view class="__header__title">
+      {{ selectedYear }}年{{ selectedMonth + 1 }}月{{ selectedDate }}日
+    </view>
+    <view class="__header__next" bindtap="handleNextMonth"></view>
+  </view>
+</template>
+
+<template name="main_block">
+  <view style="height: {{blockHeight}}" class="__main__block __main__block-{{calendarID}}" data-item="{{item}}"
+    bindtap="handleDayClick">
+    {{ item.content }}
+  </view>
+</template>
+
+<template name="main_block__not">
+  <view style="height: {{blockHeight}}" class="__main__block __main__block-{{calendarID}} __main__block-not"
+    data-item="{{item}}" bindtap="handleDayClick">
+    {{ item.content }}
+  </view>
+</template>
+
+<template name="main_block__today">
+  <view style="height: {{blockHeight}}" class="__main__block __main__block-{{calendarID}} __main__block-today"
+    data-item="{{item}}" bindtap="handleDayClick">
+    {{ item.content }}
+  </view>
+</template>
+
+<view class="__calendar" wx:if="{{calendarInit}}">
+  <template is="{{needHeader ? 'header' : ''}}" data="{{ selectedYear, selectedMonth, selectedDate }}" />
+
+  <view class="__calendar__main">
+
+    <view class="__main__block-head" style="height: {{blockHeight}}" wx:for="{{calendarHeader}}" wx:key="index">
+      {{ item }}
+    </view>
+
+    <block wx:for="{{outerCalendarData[selectedMonth] || calendarData[selectedMonth]}}" wx:key="index">
+      <template wx:if="{{item.type === 'pre' || item.type === 'next'}}" is="main_block__not"
+        data="{{ blockHeight, item }}" />
+      <template wx:elif="{{item.content === selectedDate && item.type === 'normal'}}" is="main_block__today"
+        data="{{ blockHeight, item }}" />
+      <template wx:else is="main_block" data="{{ blockHeight, item }}" />
+    </block>
+
+  </view>
+</view>
