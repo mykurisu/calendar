@@ -1,4 +1,4 @@
-import './core.scss';
+import './core.css';
 
 function getAllDaysForYear(year) {
     /**

@@ -1,8 +1,8 @@
 const { nodeResolve } = require("@rollup/plugin-node-resolve")
 const commonjs = require("@rollup/plugin-commonjs")
 const { terser } = require("rollup-plugin-terser")
-const scss = require('rollup-plugin-scss')
-const postcss = require('postcss')
+const postcss = require('rollup-plugin-postcss')
+const path = require('path')
 const autoprefixer = require('autoprefixer')
 
 
@@ -15,12 +15,14 @@ module.exports = {
     },
     
     plugins: [
+        postcss({
+            extract: true,
+            extensions: ['.css'],
+            plugins: [autoprefixer()],
+            extract: path.resolve('dist/index.css')
+        }),
         nodeResolve(),
         commonjs(),
         terser(),
-        scss({
-            output: './dist/index.css',
-            processor: () => postcss([autoprefixer({ overrideBrowserslist: ['iOS 7'] })]),
-        }),
     ]
 }

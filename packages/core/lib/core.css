@@ -28,42 +28,42 @@
     height: 12px;
     width: 12px;
     position: relative;
+}
 
-    &:after {
-        content: " ";
-        display: inline-block;
-        height: 9px;
-        width: 9px;
-        border-width: 2px 2px 0 0;
-        border-color: #c8c8cd;
-        border-style: solid;
-        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
-        position: absolute;
-        top: 50%;
-        margin-top: -4px;
-        left: 10px;
-    }
+.__header__pre::after {
+    content: " ";
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: 10px;
 }
 
 .__header__next {
     height: 12px;
     width: 12px;
     position: relative;
+}
 
-    &:after {
-        content: " ";
-        display: inline-block;
-        height: 9px;
-        width: 9px;
-        border-width: 2px 2px 0 0;
-        border-color: #c8c8cd;
-        border-style: solid;
-        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-        position: absolute;
-        top: 50%;
-        margin-top: -4px;
-        left: -10px;
-    }
+.__header__next::after {
+    content: " ";
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: -10px;
 }
 
 .__calendar__main {
