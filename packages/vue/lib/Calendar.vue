@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     init() {
-      const initDate = this.targetDate || coreDayjs.dayjs(this.targetTimestamp || Date.now()).format('YYYY/MM/DD');
+      const initDate = this.targetDate || coreDayjs(this.targetTimestamp || Date.now()).format('YYYY/MM/DD');
       const [ year, month, date ] = initDate.split('/');
       this.selectedYear = Number(year);
       this.selectedMonth = Number(month) - 1;
