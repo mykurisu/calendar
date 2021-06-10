@@ -1,7 +1,3 @@
-// index.js
-// 获取应用实例
-const app = getApp()
-
 function getAllDaysForYear(year) {
   /**
    * monthData 每月数据 用于最后输出

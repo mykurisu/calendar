@@ -1,4 +1,7 @@
+import dayjs from 'dayjs';
 import './core.css';
+
+export const coreDayjs = dayjs;
 
 function getAllDaysForYear(year) {
     /**
