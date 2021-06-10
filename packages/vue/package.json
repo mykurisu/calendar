@@ -1,6 +1,6 @@
 {
   "name": "@mykurisu/calendar-component-vue",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "基于 Vue 的日历组件",
   "author": "mykurisu <452454162@qq.com>",
   "homepage": "",
@@ -23,8 +23,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.32.13",
-    "sass-loader": "^10.0.2",
     "vue-template-compiler": "^2.6.12"
   }
 }

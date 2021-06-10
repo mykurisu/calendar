@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import './core.css';
+import './index.css';
 
 export const coreDayjs = dayjs;
 

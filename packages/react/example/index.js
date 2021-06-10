@@ -1,7 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import MyComponent from '../lib';
+import Calendar from '../lib';
 const App = () => (
-    MyComponent()
+    <div style={{width: '375px'}}>
+        <Calendar />
+    </div>
 );
 render(<App />, document.getElementById("root"));

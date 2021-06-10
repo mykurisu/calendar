@@ -6,6 +6,7 @@
     align-items: center;
     border-radius: 4px;
     background-color: white;
+    user-select: none;
 }
 
 .__calendar__header {

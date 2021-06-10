@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer')
 
 
 module.exports = {
-    input: './lib/core.js',
+    input: './lib/index.js',
     output: {
         file: './dist/index.js',
         name: 'lib',
