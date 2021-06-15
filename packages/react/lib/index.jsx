@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useLayoutEffect } from 'react'
-import { getAllDaysForYear, coreDayjs } from '@mykurisu/calendar-core';
+import { getAllDaysForYear, getFormatTime } from '@mykurisu/calendar-core';
 import '@mykurisu/calendar-core/dist/index.css';
 
 
@@ -19,7 +19,7 @@ function Calendar(props) {
     const isLastMonth = useMemo(() => selectedMonth === 11);
 
     const handleCalendarInit = () => {
-        const initDate = targetDate || coreDayjs(targetTimestamp || Date.now()).format('YYYY/MM/DD');
+        const initDate = targetDate || getFormatTime(targetTimestamp || Date.now());
         const [year, month, date] = initDate.split('/');
         setSelectedYear(Number(year));
         setSelectedMonth(Number(month) - 1);

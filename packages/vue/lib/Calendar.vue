@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { getAllDaysForYear, coreDayjs } from '@mykurisu/calendar-core';
+import { getAllDaysForYear, getFormatTime } from '@mykurisu/calendar-core';
 
 export default {
   name: 'kurisu-calendar',
@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     init() {
-      const initDate = this.targetDate || coreDayjs(this.targetTimestamp || Date.now()).format('YYYY/MM/DD');
+      const initDate = this.targetDate || getFormatTime(this.targetTimestamp || Date.now());
       const [ year, month, date ] = initDate.split('/');
       this.selectedYear = Number(year);
       this.selectedMonth = Number(month) - 1;
