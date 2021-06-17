@@ -30,7 +30,7 @@
 </template>
 
 <view class="__calendar" wx:if="{{calendarInit}}">
-  <template is="{{needHeader ? 'header' : ''}}" data="{{ selectedYear, selectedMonth, selectedDate }}" />
+  <template wx:if="{{needHeader}}" is="header" data="{{ selectedYear, selectedMonth, selectedDate }}" />
 
   <view class="__calendar__main">
 

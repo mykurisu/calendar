@@ -2,7 +2,7 @@
   "name": "@mykurisu/calendar-component-react",
   "version": "0.0.0",
   "description": "基于 React 的日历组件",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "babel lib -d dist --copy-files"

@@ -1,0 +1,8 @@
+{
+  "name": "@mykurisu/calendar-component-miniapp",
+  "version": "0.0.6",
+  "description": "微信小程序日历组件",
+  "author": "mykurisu",
+  "miniprogram": "lib",
+  "license": "ISC"
+}
