@@ -30,6 +30,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@mykurisu/calendar-core": "^0.0.4"
+    "@mykurisu/calendar-core": "^0.0.5"
   }
 }

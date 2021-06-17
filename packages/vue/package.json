@@ -13,7 +13,7 @@
     "build": "vue-cli-service build --target lib --name kurisuCalendar --dest dist ./lib/index.js"
   },
   "dependencies": {
-    "@mykurisu/calendar-core": "^0.0.4"
+    "@mykurisu/calendar-core": "^0.0.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
