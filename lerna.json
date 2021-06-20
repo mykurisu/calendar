@@ -7,7 +7,7 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
-      "allowBranch": "master"
+      "allowBranch": "master-next"
     }
   }
 }
