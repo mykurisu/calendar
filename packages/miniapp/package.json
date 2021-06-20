@@ -4,5 +4,8 @@
   "description": "微信小程序日历组件",
   "author": "mykurisu",
   "miniprogram": "lib",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "ISC"
 }

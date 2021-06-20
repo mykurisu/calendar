@@ -16,6 +16,9 @@
   "scripts": {
     "build": "rimraf ./dist && rollup -c && node ./miniapp-script.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",

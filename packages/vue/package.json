@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "vue-cli-service build --target lib --name kurisuCalendar --dest dist ./lib/index.js"
   },

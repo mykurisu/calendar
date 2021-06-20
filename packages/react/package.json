@@ -31,5 +31,8 @@
   },
   "dependencies": {
     "@mykurisu/calendar-core": "^0.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
