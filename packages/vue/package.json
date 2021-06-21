@@ -1,6 +1,6 @@
 {
   "name": "@mykurisu/calendar-component-vue",
-  "version": "0.0.9",
+  "version": "0.0.10-alpha.0",
   "description": "基于 Vue 的日历组件",
   "author": "mykurisu <452454162@qq.com>",
   "homepage": "",
@@ -16,7 +16,7 @@
     "build": "vue-cli-service build --target lib --name kurisuCalendar --dest dist ./lib/index.js"
   },
   "dependencies": {
-    "@mykurisu/calendar-core": "^0.0.5"
+    "@mykurisu/calendar-core": "^0.0.6-alpha.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
