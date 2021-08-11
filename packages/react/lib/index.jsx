@@ -56,7 +56,6 @@ function Calendar(props) {
     }
 
     useLayoutEffect(() => {
-        console.log(document.querySelector('.__main__block-head'))
         setBlockHeight(document.querySelector('.__main__block-head').offsetWidth + "px");
     }, [calendarData]);
 

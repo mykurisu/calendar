@@ -58,7 +58,6 @@ Component({
   
     handleDayClick(e) {
       const item = e.currentTarget.dataset.item;
-      console.log(item);
       if (item.type === "normal") {
         this.setData({
           selectedDate: Number(item.content)
