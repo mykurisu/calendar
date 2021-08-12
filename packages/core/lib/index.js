@@ -50,7 +50,7 @@ function preDaysCreator(preLastDay, firstDay) {
             type: "pre",
         };
 
-        preDays.push(obj);
+        preDays.splice(0, 0, obj);
     }
     return preDays;
 }
