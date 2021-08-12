@@ -1,6 +1,6 @@
 {
   "name": "@mykurisu/calendar-component-react",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "description": "基于 React 的日历组件",
   "main": "dist/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@mykurisu/calendar-core": "^0.0.6-alpha.0"
+    "@mykurisu/calendar-core": "^0.1.0"
   },
   "publishConfig": {
     "access": "public"
