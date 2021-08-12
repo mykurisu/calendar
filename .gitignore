@@ -3,3 +3,4 @@ dist/
 .DS_Store
 
 lerna-debug.log
+packages/miniapp/lib/core.js
